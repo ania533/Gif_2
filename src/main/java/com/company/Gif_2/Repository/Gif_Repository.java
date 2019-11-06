@@ -37,6 +37,15 @@ public class Gif_Repository {
         }
         return favorites;
     }
+    public Gif getGifsByName(String name){
+    List<Gif> listGif = getAllGifs();
+        for ( Gif y: listGif) {
+            if (y.getName().equals(name)){
+                return y;
+            }
+        }
+        return null;
+    }
 }
 
 
