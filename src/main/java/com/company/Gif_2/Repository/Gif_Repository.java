@@ -26,7 +26,7 @@ public class Gif_Repository {
     public static List<Gif> getAllGifs() {
         return ALL_GIFS;
     }
-
+// Repository - warstwa odpowiedzialna za dane
     public  List<Gif> getFavoritesGifs() {
         List<Gif> allGifs = getAllGifs();
         List<Gif> favorites = new ArrayList<>();
