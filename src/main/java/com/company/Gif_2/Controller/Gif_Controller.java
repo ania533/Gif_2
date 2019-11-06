@@ -34,6 +34,20 @@ public class Gif_Controller {
 // 3. Zwracanie widoku
         return "home";
     }
+    @GetMapping("/favorites")
+    public String listGifsFavorites(ModelMap modelMap) {
+     // 1. Wyciąganie gifów
+        //   List<Gif> gifList = getAllGifs(); - rozwiązanie Javowe
+        List<Gif> gifList = gif_Repository.getFavoritesGifs();
+        // Powyżej wstrzyknęliśmy zależność z Gif_Repository do Gif_Controller
+        // 2. Przekazanie gifa do View
+        // klucz - nazwa obiektu w thymeleaf, a wartość obiekt z  backendowy
+        modelMap.put("gifs",gifList);
+        // Do przekazania gifa do View służą Mapy ( ModelMap) ,które przetrzymują klucz i wartość
+// 3. Zwracanie widoku
+        return "favorites";
+    }
+
 }
 
 
