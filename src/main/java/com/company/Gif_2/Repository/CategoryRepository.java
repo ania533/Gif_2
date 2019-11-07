@@ -1,10 +1,13 @@
 package com.company.Gif_2.Repository;
 
 import com.company.Gif_2.Model.Category;
+import com.company.Gif_2.Model.Gif;
 import org.springframework.stereotype.Repository;
 
 import java.util.Arrays;
 import java.util.List;
+
+
 @Repository
 public class CategoryRepository {
 
@@ -17,5 +20,15 @@ public class CategoryRepository {
     public static List<Category> getAllCategories() {
         return ALL_CATEGORIES;
     }
+    // Metoda szukająca kategory po id
+    public Category getCategoryById(Integer id){
+        for (Category c : ALL_CATEGORIES){
+            if(c.getId().equals(id)){
+                return c;
+            }
+        }
+        return null;
+    }
 }
+
 
